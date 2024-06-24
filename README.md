@@ -6,8 +6,8 @@ This is simple app for following results, upcoming and live matches for Euro 202
 
 ## State managment
 
-- Data is fetched with SVR
-- SVR reevalidates data every 10 minutes and rerenders page if there is new data
+- Data is fetched with SWR
+- SWR reevalidates data every 10 minutes and rerenders page if there is new data
 
 ## Run Locally
 
