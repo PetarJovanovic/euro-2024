@@ -55,7 +55,7 @@ export default function MatchItem({ date }) {
               {match.matchStatus}
             </div>
 
-            {/*Checks if there are live matches shows live status*/}
+            {/*Checks if there are live matches and shows live status*/}
             {match.live && (
               <div className='flex justify-center items-center gap-2'>
                 <span className='relative flex h-3 w-3'>
