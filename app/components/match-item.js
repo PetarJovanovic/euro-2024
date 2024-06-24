@@ -12,21 +12,21 @@ export default function MatchItem({ date }) {
         return (
           <div key={match.name} className='grid grid-cols-1 p-2 border-b-2 border-white [&:last-child]:border-b-0 lg:p-6'>
             <div className='grid grid-cols-5 items-start'>
-              <p className='flex justify-start text-sm md:text-base'>{match.group}</p>
+              <p className='flex justify-start text-sm md:text-lg md:font-medium'>{match.group}</p>
               <div className='col-span-3 flex justify-center items-center gap-2'>
                 <IconContext.Provider value={{ size: '1.25rem' }}>
                   <MdOutlineStadium />
                 </IconContext.Provider>
                 <p className='text-xs md:text-base'>{match.stadium}</p>
               </div>
-              <p className='flex justify-end text-sm md:text-base'> {moment(match.timestamp).format('HH:ss')}h</p>
+              <p className='flex justify-end text-sm md:text-lg md:font-medium'> {moment(match.timestamp).format('HH:ss')}h</p>
             </div>
 
             <div className='grid grid-cols-3 py-4'>
               <div className='flex justify-end'>
                 <div className='flex gap-2 justify-start items-center w-[80%] md:w-[40%]'>
                   <Image src={match.homeTeam.logo.url} width={25} height={25} alt='logo' />
-                  <p>{match.homeTeam.name}</p>
+                  <p className='md:text-lg md:font-medium'>{match.homeTeam.name}</p>
                 </div>
               </div>
 
@@ -38,7 +38,7 @@ export default function MatchItem({ date }) {
 
               <div className='flex justify-start'>
                 <div className='flex gap-2 justify-end items-center w-[80%] md:w-[40%]'>
-                  <p>{match.awayTeam.name}</p>
+                  <p className='md:text-lg md:font-medium'>{match.awayTeam.name}</p>
                   <Image src={match.awayTeam.logo.url} width={25} height={25} alt='logo' />
                 </div>
               </div>
@@ -46,15 +46,16 @@ export default function MatchItem({ date }) {
 
             <div
               className={`flex justify-center items-center text-sm md:text-base 
-                    ${match.matchStatus === 'Ongoing' && 'text-green-500'} 
-                    ${match.matchStatus === 'First half' && 'text-green-500'} 
-                    ${match.matchStatus === 'Half time' && 'text-green-500'} 
-                    ${match.matchStatus === 'Second half' && 'text-green-500'} 
-                    ${match.matchStatus === 'Finished' && 'text-red-500'} 
-                    ${match.matchStatus === 'Upcoming' && 'text-gray-500'}`}>
+              ${match.matchStatus === 'Ongoing' && 'text-green-500'} 
+              ${match.matchStatus === 'First half' && 'text-green-500'} 
+              ${match.matchStatus === 'Half time' && 'text-green-500'} 
+              ${match.matchStatus === 'Second half' && 'text-green-500'} 
+              ${match.matchStatus === 'Finished' && 'text-red-500'} 
+              ${match.matchStatus === 'Upcoming' && 'text-gray-500'}`}>
               {match.matchStatus}
             </div>
 
+            {/*Checks if there are live matches shows live status*/}
             {match.live && (
               <div className='flex justify-center items-center gap-2'>
                 <span className='relative flex h-3 w-3'>
