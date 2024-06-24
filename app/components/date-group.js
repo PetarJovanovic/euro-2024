@@ -9,9 +9,7 @@ export default function DateGroup({ matches, status }) {
   // Than if there are any upcoming matches, show counter until it starts
   if (matches.length === 0 && status[0] === 'Live' && status[1].length > 0) {
     return (
-      <div
-        className={`grid grid-cols-1 w-full shadow-lg rounded-md relative bg-gray-100 
-        ${status[0] === 'Live' && 'shadow-green-400/50'}`}>
+      <div className={`grid grid-cols-1 w-full shadow-lg rounded-md relative bg-gray-100`}>
         <div className='flex flex-col gap-2 justify-center items-center p-10'>
           <p className='font-semibold text-xl'>Next match in</p>
           <CountdownTimer nextMatch={status[1][0].timestamp} />
