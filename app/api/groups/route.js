@@ -10,7 +10,7 @@ export async function GET() {
   // Fetch and aggregate data
   const data = await Promise.all(
     urls.map(async url => {
-      const res = await fetch(url[0], { caches: 'no-store' });
+      const res = await fetch(url[0], { cache: 'no-store' });
       const result = await res.json();
       return { [url[1]]: result };
     })
