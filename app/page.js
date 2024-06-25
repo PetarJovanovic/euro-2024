@@ -5,6 +5,7 @@ import fetcher from '@/app/lib/fetcher';
 import DateGroup from '@/app/components/date-group';
 import { IoIosArrowUp } from 'react-icons/io';
 import Link from 'next/link';
+import moment from 'moment';
 
 export default function Home() {
   // Fetches data and reevalidates every 10 minutes.
@@ -31,6 +32,7 @@ export default function Home() {
 
   // Renders the page if there is no error and data is available.
   if (data) {
+    console.log('Data fetched at', moment().format('DD-MM-YY, HH:mm:ss'));
     const { liveMatches, upcomingMatches, finisehdMatches } = data;
 
     return (
