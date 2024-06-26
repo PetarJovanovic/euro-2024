@@ -48,6 +48,7 @@ function formatData(data) {
         const live = match.matchStatusId === 7 || match.matchStatusId === 8 || match.matchStatusId === 9 || match.matchStatusId === 10 ? true : false;
 
         return {
+          name: match.name,
           timestamp: match.timestamp,
           matchStatus,
           live,
