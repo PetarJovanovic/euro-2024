@@ -32,7 +32,7 @@ export default function Header() {
             Search
           </label>
           <input
-            className='rounded-md block py-1 pl-7 text-sm outline-none text-[#0d5aa4]'
+            className='rounded-md block py-1 pl-7 text-[16px] outline-none text-[#0d5aa4]'
             defaultValue={searchParams.get('search')?.toString()}
             onChange={e => handleSearch(e.target.value)}
           />
